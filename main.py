@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def check_numbers(dict):
     for k, v in dict.items():
         try:
@@ -70,27 +72,32 @@ def input_imperial_to_metric():
     return(my_dict)
 
 
-print('''
-Please select:
-(1) Convert metric to imperial
-(2) Convert imperial to metric
-''')
+def main():
+    print('''
+    Please select:
+    (1) Convert metric to imperial
+    (2) Convert imperial to metric
+    ''')
 
-choice = None
-while choice is None:
-    my_choice = input()
-    if my_choice in {"1", "2"}:
-        choice = int(my_choice)
+    choice = None
+    while choice is None:
+        my_choice = input()
+        if my_choice in {"1", "2"}:
+            choice = int(my_choice)
+        else:
+            print('Please type in 1 or 2')
+
+
+    if choice == 1:
+        d, w, r = calculate_metric_to_imperial(**input_metric_to_imperial())
+        print(f'\nImperial dimensions are {d} x {w} R{r}')
+
     else:
-        print('Please type in 1 or 2')
+        w, p, r = calculate_imperial_to_metric(**input_imperial_to_metric())
+        print(f'\nMetric dimensions are {w} x {p} R{r}')
+
+    input()
 
 
-if choice == 1:
-    d, w, r = calculate_metric_to_imperial(**input_metric_to_imperial())
-    print(f'\nImperial dimensions are {d} x {w} R{r}')
-
-else:
-    w, p, r = calculate_imperial_to_metric(**input_imperial_to_metric())
-    print(f'\nMetric dimensions are {w} x {p} R{r}')
-
-input()
+if __name__ == '__main__':
+    main()
