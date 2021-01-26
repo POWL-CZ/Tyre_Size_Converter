@@ -92,3 +92,5 @@ if choice == 1:
 else:
     w, p, r = calculate_imperial_to_metric(**input_imperial_to_metric())
     print(f'\nMetric dimensions are {w} x {p} R{r}')
+
+input()
