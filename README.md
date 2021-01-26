@@ -1,2 +1,2 @@
-# Tyre_Size_Converter
-Converts tyre dimensions from Inches to Metric and vice versa
+# Tyre Size Converter
+Converts tyre dimensions from Inches to Metric system and vice versa
